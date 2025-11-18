@@ -1,0 +1,168 @@
+Commands needed:
+
+docker ps -a
+docker exec -it todo-backend-mongo-1 bash
+mongosh -u root -p example
+show dbs
+use the_database
+show collections
+db.todos.find({})
+db.todos.insertOne({text: 'Increase the number of tools in my tool belt', done: false})
+db.todos.find({})
+exit 
+exit
+
+SCRIPT RECORDING OUTPUT:
+
+Script started on Tue Nov 18 11:40:08 2025
+[1m[7m%[27m[1m[0m                                                                                               
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro FSO_PART12 % [K[?2004hddocker ps -a[?2004l
+
+CONTAINER ID   IMAGE                           COMMAND                  CREATED          STATUS                      PORTS                                           NAMES
+16c4cd3ddf67   nginx                           "/docker-entrypoint.…"   19 minutes ago   Up 19 minutes               0.0.0.0:8080->80/tcp, [::]:8080->80/tcp         intelligent_kowalevski
+87d9afcf04f4   mongo                           "docker-entrypoint.s…"   2 hours ago      Up 2 hours                  0.0.0.0:3456->27017/tcp, [::]:3456->27017/tcp   todo-backend-mongo-1
+5acf2667a200   express-server                  "docker-entrypoint.s…"   14 hours ago     Exited (137) 14 hours ago                                                   todo-backend-app-1
+5c8b646fc2dc   express-server                  "docker-entrypoint.s…"   15 hours ago     Exited (137) 14 hours ago                                                   hungry_stonebraker
+cdfcb233ccfa   express-server                  "docker-entrypoint.s…"   15 hours ago     Exited (137) 15 hours ago                                                   serene_euclid
+a1d6d75f5279   8522f5efefd3                    "docker-entrypoint.s…"   20 hours ago     Exited (137) 20 hours ago                                                   kind_lalande
+3f67d07d67d1   8522f5efefd3                    "docker-entrypoint.s…"   20 hours ago     Created                                                                     nervous_jang
+124eccb8d0aa   74f210592145                    "docker-entrypoint.s…"   20 hours ago     Created                                                                     awesome_tu
+eed21eb35766   0286a41a81ed                    "docker-entrypoint.s…"   20 hours ago     Created                                                                     quirky_banzai
+f54c96974fb4   15ccecab2486                    "docker-entrypoint.s…"   21 hours ago     Exited (137) 20 hours ago                                                   sleepy_mirzakhani
+f03dae98682e   fs-hello-world                  "docker-entrypoint.s…"   21 hours ago     Exited (0) 21 hours ago                                                     vibrant_dewdney
+cb5fefa8e39e   node:20                         "docker-entrypoint.s…"   21 hours ago     Exited (0) 21 hours ago                                                     hello-node
+b508ef2e3097   hello-node-world                "bash"                   21 hours ago     Exited (127) 21 hours ago                                                   kind_cohen
+9e960c1b2053   hello-world                     "/hello"                 23 hours ago     Exited (0) 23 hours ago                                                     determined_mayer
+1dc42dcda918   ds-2025-student-ubuntu_server   "/bin/bash"              5 weeks ago      Exited (137) 2 weeks ago                                                    ds-2025-student-ubuntu_server-1
+06c121884d33   ds-2025-student-ubuntu_client   "/bin/bash"              5 weeks ago      Exited (137) 2 weeks ago                                                    ds-2025-student-ubuntu_client-1
+f143ccfa018f   iots_2025s-mosquitto            "/docker-entrypoint.…"   5 weeks ago      Exited (0) 5 weeks ago                                                      iots_2025s-mosquitto-1
+55351dcc1d08   iots_2025s-node-red             "./entrypoint.sh"        5 weeks ago      Exited (255) 5 weeks ago    0.0.0.0:1880->1880/tcp                          iots_2025s-node-red-1
+714d8986ebcd   iots_2025s-influxdb2            "/entrypoint.sh infl…"   5 weeks ago      Exited (255) 5 weeks ago    0.0.0.0:8086->8086/tcp                          iots_2025s-influxdb2-1
+589127e7c607   ubuntu:24.04                    "/bin/bash"              7 weeks ago      Exited (137) 5 weeks ago                                                    cdev2
+bc8859dfa2e2   my-ubuntu-dev                   "/bin/bash"              2 months ago     Exited (137) 7 weeks ago                                                    cdev
+[1m[7m%[27m[1m[0m                                                                                               
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro FSO_PART12 % [K[?2004h[7mdocker exec -it wonderful_ramanujan bash[27m[40D[27md[27mo[27mc[27mk[27me[27mr[27m [27me[27mx[27me[27mc[27m [27m-[27mi[27mt[27m [27mw[27mo[27mn[27md[27me[27mr[27mf[27mu[27ml[27m_[27mr[27ma[27mm[27ma[27mn[27mu[27mj[27ma[27mn[27m [27mb[27ma[27ms[27mh bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash  bash [7mt[7mo[7md[7mo[7m-[7mbackend-mongo-1[27m bash[20D[27mt[27mo[27md[27mo[27m-[27mb[27ma[27mc[27mk[27me[27mn[27md[27m-[27mm[27mo[27mn[27mg[27mo[27m-[27m1  bash[1C[1Cbash [?2004l
+
+[?2004hroot@87d9afcf04f4:/# mongosh [7m -u root -p example[27m -u root -p example[1P
+[?2004l
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	691c3f7d6c447f097fb1ddf3
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.9[0m
+Using MongoDB:		8.2.1
+[1m[33mUsing Mongosh[0m:		2.5.9
+
+For mongosh info see: https://www.mongodb.com/docs/mongodb-shell/
+
+
+To help improve our products, anonymous usage data is collected and sent to MongoDB periodically (https://www.mongodb.com/legal/privacy-policy).
+You can opt-out by running the disableTelemetry() command.
+
+[1G[0J [1G[?2004h[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2025-11-18T07:52:44.256+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2025-11-18T07:52:44.256+00:00: For customers running the current memory allocator, we suggest changing the contents of the following sysfsFile
+   2025-11-18T07:52:44.257+00:00: We suggest setting the contents of sysfsFile to 0.
+   2025-11-18T07:52:44.257+00:00: vm.max_map_count is too low
+   2025-11-18T07:52:44.257+00:00: We suggest setting swappiness to 0 or 1, as swapping can cause performance problems.
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+
+[1madmin[0m         100.00 KiB
+[1mconfig[0m        108.00 KiB
+[1mlocal[0m          68.00 KiB
+[1mthe_database[0m   56.00 KiB
+[1G[0Jtest> [7Guse the_database
+
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+
+[1mtodos[0m
+[1G[0Jthe_database> [15Gt[1G[0Jthe_database> [15Gdb.todos.find({})
+
+[
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf4'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf5'[39m),
+    text: [32m'Learn about cows'[39m,
+    done: [33mtrue[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.todos.create()[1D[1G[0Jthe_database> db.todos.create[44m([49m)[31G[1G[0Jthe_database> db.todos.create[44m([49m{)[32G[1G[0Jthe_database> db.todos.create[44m([49m{})[33G[1D[1G[0Jthe_database> db.todos.create([44m{[49m})[32G[1G[0Jthe_database> db.todos.create([44m{[49mt})[33G[1G[0Jthe_database> db.todos.create([44m{[49mte})[34G[1G[0Jthe_database> db.todos.create([44m{[49mtex})[35G[1G[0Jthe_database> db.todos.create([44m{[49mtext})[36G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m:})[37G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: })[38G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'})[39m[39G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'H})[39m[40G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'He})[39m[41G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hel})[39m[42G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hell})[39m[43G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello})[39m[44G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello })[39m[45G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello f})[39m[46G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello fr})[39m[47G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello fri})[39m[48G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello frie})[39m[49G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello frien})[39m[50G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend})[39m[51G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend,})[39m[52G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend})[39m[51G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m})[52G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m,})[53G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, })[54G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, d})[55G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [36mdo[39m})[56G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, don})[57G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, done})[58G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m:})[59G[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: })[60G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'})[39m[61G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'f})[39m[62G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'fa})[39m[63G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'fal})[39m[64G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'fals})[39m[65G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'false})[39m[66G[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [32m'false})[39m[65G[1D[1D[1D[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[60G[1C[1C[1C[1C[1C[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[65G[1C[1G[0Jthe_database> db.todos.create[44m([49m{[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[66G[1C[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G
+
+Uncaught 
+[1m[31mTypeError[0m: db.todos.create is not a function
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1D[1G[0Jthe_database> db.todos.create[44m([49m{[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[66G[1D[1G[0Jthe_database> db.todos.create([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[65G[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[64G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [44m[32m'[49mHello friend'[39m, [33mdone[39m: [33mfalse[39m})[51G[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[50G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend[44m'[39m[49m, [33mdone[39m: [33mfalse[39m})[38G[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[37G[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m[44m}[49m)[31G[1D[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[30G[1G[0Jthe_database> db.todos.creat({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[29G[1G[0Jthe_database> db.todos.crea({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[28G[1G[0Jthe_database> db.todos.cre({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[27G[1G[0Jthe_database> db.todos.cr({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[26G[1G[0Jthe_database> db.todos.c({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[25G[1G[0Jthe_database> db.todos.({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[24G[1G[0Jthe_database> db.todos.i({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[25G[1G[0Jthe_database> db.todos.in({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[26G[1G[0Jthe_database> db.todos.ins({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[27G[1G[0Jthe_database> db.todos.inse({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[28G[1G[0Jthe_database> db.todos.inser({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[29G[1G[0Jthe_database> db.todos.insert({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[30G[1G[0Jthe_database> db.todos.insertO({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[31G[1G[0Jthe_database> db.todos.insertOn({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[32G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m}[44m)[49m[33G[37C[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[70G
+
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'691c40d56c447f097fb1ddf4'[39m)
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[70G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.find({})[32G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.find({})[32G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[70G[1G[0Jthe_database> db.todos.create({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.find({})[32G
+
+[
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf4'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf5'[39m),
+    text: [32m'Learn about cows'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'691c40d56c447f097fb1ddf4'[39m),
+    text: [32m'Hello friend'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.find({})[32G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[70G[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m{[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[69G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[68G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[67G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello friend'[39m, [33mdone[39m: [33mfalse[39m})[54G[1C[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Hello friend'[39m, [33mdone[39m: [33mfalse[39m})[55G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello friend'[39m, [33mdone[39m: [33mfalse[39m})[54G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello frien'[39m, [33mdone[39m: [33mfalse[39m})[53G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello frie'[39m, [33mdone[39m: [33mfalse[39m})[52G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello fri'[39m, [33mdone[39m: [33mfalse[39m})[51G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello fr'[39m, [33mdone[39m: [33mfalse[39m})[50G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello f'[39m, [33mdone[39m: [33mfalse[39m})[49G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello '[39m, [33mdone[39m: [33mfalse[39m})[48G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHello'[39m, [33mdone[39m: [33mfalse[39m})[47G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHell'[39m, [33mdone[39m: [33mfalse[39m})[46G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHel'[39m, [33mdone[39m: [33mfalse[39m})[45G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mHe'[39m, [33mdone[39m: [33mfalse[39m})[44G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mH'[39m, [33mdone[39m: [33mfalse[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49m'[39m, [33mdone[39m: [33mfalse[39m})[42G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mI'[39m, [33mdone[39m: [33mfalse[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIn'[39m, [33mdone[39m: [33mfalse[39m})[44G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mInc'[39m, [33mdone[39m: [33mfalse[39m})[45G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncr'[39m, [33mdone[39m: [33mfalse[39m})[46G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncre'[39m, [33mdone[39m: [33mfalse[39m})[47G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrea'[39m, [33mdone[39m: [33mfalse[39m})[48G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncreas'[39m, [33mdone[39m: [33mfalse[39m})[49G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease'[39m, [33mdone[39m: [33mfalse[39m})[50G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease '[39m, [33mdone[39m: [33mfalse[39m})[51G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease t'[39m, [33mdone[39m: [33mfalse[39m})[52G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease th'[39m, [33mdone[39m: [33mfalse[39m})[53G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the'[39m, [33mdone[39m: [33mfalse[39m})[54G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the '[39m, [33mdone[39m: [33mfalse[39m})[55G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the n'[39m, [33mdone[39m: [33mfalse[39m})[56G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the nu'[39m, [33mdone[39m: [33mfalse[39m})[57G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the num'[39m, [33mdone[39m: [33mfalse[39m})[58G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the numb'[39m, [33mdone[39m: [33mfalse[39m})[59G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the numbe'[39m, [33mdone[39m: [33mfalse[39m})[60G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number'[39m, [33mdone[39m: [33mfalse[39m})[61G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number '[39m, [33mdone[39m: [33mfalse[39m})[62G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number o'[39m, [33mdone[39m: [33mfalse[39m})[63G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of'[39m, [33mdone[39m: [33mfalse[39m})[64G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of '[39m, [33mdone[39m: [33mfalse[39m})[65G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of t'[39m, [33mdone[39m: [33mfalse[39m})[66G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of to'[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of too'[39m, [33mdone[39m: [33mfalse[39m})[68G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tool'[39m, [33mdone[39m: [33mfalse[39m})[69G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools'[39m, [33mdone[39m: [33mfalse[39m})[70G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools '[39m, [33mdone[39m: [33mfalse[39m})[71G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools i'[39m, [33mdone[39m: [33mfalse[39m})[72G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in'[39m, [33mdone[39m: [33mfalse[39m})[73G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in '[39m, [33mdone[39m: [33mfalse[39m})[74G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in m'[39m, [33mdone[39m: [33mfalse[39m})[75G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my'[39m, [33mdone[39m: [33mfalse[39m})[76G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my '[39m, [33mdone[39m: [33mfalse[39m})[77G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my t'[39m, [33mdone[39m: [33mfalse[39m})[78G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my to'[39m, [33mdone[39m: [33mfalse[39m})[79G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my too'[39m, [33mdone[39m: [33mfalse[39m})[80G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool'[39m, [33mdone[39m: [33mfalse[39m}) [81G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool '[39m, [33mdone[39m: [33mfalse[39m})[82G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool b'[39m, [33mdone[39m: [33mfalse[39m})[83G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool be'[39m, [33mdone[39m: [33mfalse[39m})[84G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool bel'[39m, [33mdone[39m: [33mfalse[39m})[85G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [44m[32m'[49mIncrease the number of tools in my tool belt'[39m, [33mdone[39m: [33mfalse[39m})[86G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Increase the number of tools in my tool belt'[39m, [33mdone[39m: [33mfalse[39m})[6G[1A[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Increase the number of tools in my tool belt'[39m, [33mdone[39m: [33mfalse[39m})[6G
+
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId([32m'691c411b6c447f097fb1ddf5'[39m)
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m: [32m'Increase the number of tools in my tool belt'[39m, [33mdone[39m: [33mfalse[39m})[6G[1A[1G[0Jthe_database> db.todos.find({})[32G
+
+[
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf4'[39m),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'691b87f175e4696eefb1ddf5'[39m),
+    text: [32m'Learn about cows'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId([32m'691c40d56c447f097fb1ddf4'[39m),
+    text: [32m'Hello friend'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId([32m'691c411b6c447f097fb1ddf5'[39m),
+    text: [32m'Increase the number of tools in my tool belt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gwxit[1G[0Jthe_database> wxi[18G[1G[0Jthe_database> wx[17G[1G[0Jthe_database> w[16G[1G[0Jthe_database> [15Gexit
+
+[?2004l[?2004hroot@87d9afcf04f4:/# exit
+[?2004l
+exit
+[1m[7m%[27m[1m[0m                                                                                               
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro FSO_PART12 % [K[?2004heexit[?2004l
+
+
+Script done on Tue Nov 18 11:50:04 2025
