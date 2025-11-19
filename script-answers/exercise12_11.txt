@@ -1,0 +1,288 @@
+Commands:
+Script started, output file is script-answers/exercise12_11.txt
+robinyo@Robinins-MacBook-Pro FSO_PART12 % cd todo-app/todo-backend 
+robinyo@Robinins-MacBook-Pro todo-backend % docker exec -it redis-1 bash            
+Error response from daemon: No such container: redis-1
+robinyo@Robinins-MacBook-Pro todo-backend % docker exec -it todo-backend-redis-1 bash
+root@d917141cca15:/data# redis-cli
+127.0.0.1:6379> KEYS *
+1) "added_todos"
+127.0.0.1:6379> GET
+(error) ERR wrong number of arguments for 'get' command
+127.0.0.1:6379> GET "added_todos"
+"1"
+127.0.0.1:6379> SET added_todos "9001"
+OK
+127.0.0.1:6379> GET "added_todos"
+"9001"
+127.0.0.1:6379> GET "added_todos"
+"9002"
+127.0.0.1:6379> DEL "added_todos"
+(integer) 1
+127.0.0.1:6379> GET "added_todos"
+(nil)
+127.0.0.1:6379> GET "added_todos"
+"1"
+127.0.0.1:6379> exit
+root@d917141cca15:/data# exit
+exit
+robinyo@Robinins-MacBook-Pro todo-backend % exit
+
+
+SCRIPT RECORDING:
+
+Script started on Tue Nov 18 13:58:46 2025
+[1m[7m%[27m[1m[0m                                                                                                                                  
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro FSO_PART12 % [K[?2004hccd t
+
+[Jtodo-app/   typescript[A[0m[27m[24m
+[42Ccd t[Kodo-app[1m/[0m[0m/todo-backend[1m/[0m[0m [?2004l
+
+[J[1m[7m%[27m[1m[0m                                                                                                                                  
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro todo-backend % [K[?2004h[7mdocker exec -it wonderful_ramanujan bash[27m[40D[27md[27mo[27mc[27mk[27me[27mr[27m [27me[27mx[27me[27mc[27m [27m-[27mi[27mt[27m [27mw[27mo[27mn[27md[27me[27mr[27mf[27mu[27ml[27m_[27mr[27ma[27mm[27ma[27mn[27mu[27mj[27ma[27mn[27m [27mb[27ma[27ms[27mh                       redis-1 bash[?2004l
+
+Error response from daemon: No such container: redis-1
+[1m[7m%[27m[1m[0m                                                                                                                                  
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro todo-backend % [K[?2004hdocker exec -it redis-1 bash           [7mtodo-backend-redis-1[27m[20D[27mt[27mo[27md[27mo[27m-[27mb[27ma[27mc[27mk[27me[27mn[27md[27m-[27mr[27me[27md[27mi[27ms[27m-[27m1 bash[?2004l
+
+[?2004hroot@d917141cca15:/data# redis-cli
+[?2004l
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> K
+[17C
+[0K127.0.0.1:6379> KE
+[18C
+[0K127.0.0.1:6379> KEY
+[19C
+[0K127.0.0.1:6379> KEYS
+[20C
+[0K127.0.0.1:6379> KEYS [0;90;49mpattern[0m
+[21C
+[0K127.0.0.1:6379> KEYS *[0;90;49m pattern[0m
+[22C
+[0K127.0.0.1:6379> KEYS *
+[22C
+1) "added_todos"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> G
+[17C
+[0K127.0.0.1:6379> GE
+[18C
+[0K127.0.0.1:6379> GET
+[19C
+[0K127.0.0.1:6379> GET
+[19C
+(error) ERR wrong number of arguments for 'get' command
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> G
+[17C
+[0K127.0.0.1:6379> GE
+[18C
+[0K127.0.0.1:6379> GET
+[19C
+[0K127.0.0.1:6379> GET [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> GET "
+[21C
+[0K127.0.0.1:6379> GET "a
+[22C
+[0K127.0.0.1:6379> GET "ad
+[23C
+[0K127.0.0.1:6379> GET "add
+[24C
+[0K127.0.0.1:6379> GET "adde
+[25C
+[0K127.0.0.1:6379> GET "added
+[26C
+[0K127.0.0.1:6379> GET "added_
+[27C
+[0K127.0.0.1:6379> GET "added_t
+[28C
+[0K127.0.0.1:6379> GET "added_to
+[29C
+[0K127.0.0.1:6379> GET "added_tod
+[30C
+[0K127.0.0.1:6379> GET "added_todo
+[31C
+[0K127.0.0.1:6379> GET "added_todos
+[32C
+[0K127.0.0.1:6379> GET "added_todos"[0;90;49m key[0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"
+[33C
+"1"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> S
+[17C
+[0K127.0.0.1:6379> SE
+[18C
+[0K127.0.0.1:6379> SET
+[19C
+[0K127.0.0.1:6379> SET [0;90;49mkey value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTTL][0m
+[20C
+[0K127.0.0.1:6379> SET a[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPTT[0m
+[21C
+[0K127.0.0.1:6379> SET ad[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEPT[0m
+[22C
+[0K127.0.0.1:6379> SET add[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEEP[0m
+[23C
+[0K127.0.0.1:6379> SET adde[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KEE[0m
+[24C
+[0K127.0.0.1:6379> SET added[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|KE[0m
+[25C
+[0K127.0.0.1:6379> SET added_[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|K[0m
+[26C
+[0K127.0.0.1:6379> SET added_t[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|[0m
+[27C
+[0K127.0.0.1:6379> SET added_to[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds[0m
+[28C
+[0K127.0.0.1:6379> SET added_tod[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-millisecond[0m
+[29C
+[0K127.0.0.1:6379> SET added_todo[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-millisecon[0m
+[30C
+[0K127.0.0.1:6379> SET added_todos[0;90;49m key value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseco[0m
+[31C
+[0K127.0.0.1:6379> SET added_todos [0;90;49mvalue [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds|[0m
+[32C
+[0K127.0.0.1:6379> SET added_todos "
+[33C
+[0K127.0.0.1:6379> SET added_todos "9
+[34C
+[0K127.0.0.1:6379> SET added_todos "90
+[35C
+[0K127.0.0.1:6379> SET added_todos "900
+[36C
+[0K127.0.0.1:6379> SET added_todos "9001
+[37C
+[0K127.0.0.1:6379> SET added_todos "9001"[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-millis[0m
+[38C
+[0K127.0.0.1:6379> SET added_todos "9001" [0;90;49m[NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-milliseconds[0m
+[39C
+[0K127.0.0.1:6379> SET added_todos "9001"[0;90;49m value [NX|XX] [GET] [EX seconds|PX milliseconds|EXAT unix-time-seconds|PXAT unix-time-millis[0m
+[38C
+[0K127.0.0.1:6379> SET added_todos "9001"
+[38C
+OK
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> G
+[17C
+[0K127.0.0.1:6379> GE
+[18C
+[0K127.0.0.1:6379> GET
+[19C
+[0K127.0.0.1:6379> GET [0;90;49mkey[0m
+[20C
+[0K127.0.0.1:6379> GET "
+[21C
+[0K127.0.0.1:6379> GET "a
+[22C
+[0K127.0.0.1:6379> GET "ad
+[23C
+[0K127.0.0.1:6379> GET "add
+[24C
+[0K127.0.0.1:6379> GET "adde
+[25C
+[0K127.0.0.1:6379> GET "added
+[26C
+[0K127.0.0.1:6379> GET "added_
+[27C
+[0K127.0.0.1:6379> GET "added_t
+[28C
+[0K127.0.0.1:6379> GET "added_to
+[29C
+[0K127.0.0.1:6379> GET "added_tod
+[30C
+[0K127.0.0.1:6379> GET "added_todo
+[31C
+[0K127.0.0.1:6379> GET "added_todos
+[32C
+[0K127.0.0.1:6379> GET "added_todos"[0;90;49m key[0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"
+[33C
+"9001"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> GET "added_todos"[0;90;49m key[0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"
+[33C
+"9002"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> D
+[17C
+[0K127.0.0.1:6379> DE
+[18C
+[0K127.0.0.1:6379> DEL
+[19C
+[0K127.0.0.1:6379> DEL [0;90;49mkey [key ...][0m
+[20C
+[0K127.0.0.1:6379> DEL "
+[21C
+[0K127.0.0.1:6379> DEL "a
+[22C
+[0K127.0.0.1:6379> DEL "ad
+[23C
+[0K127.0.0.1:6379> DEL "add
+[24C
+[0K127.0.0.1:6379> DEL "adde
+[25C
+[0K127.0.0.1:6379> DEL "added
+[26C
+[0K127.0.0.1:6379> DEL "added_
+[27C
+[0K127.0.0.1:6379> DEL "added_t
+[28C
+[0K127.0.0.1:6379> DEL "added_to
+[29C
+[0K127.0.0.1:6379> DEL "added_tod
+[30C
+[0K127.0.0.1:6379> DEL "added_todo
+[31C
+[0K127.0.0.1:6379> DEL "added_todos
+[32C
+[0K127.0.0.1:6379> DEL "added_todos"[0;90;49m key [key ...][0m
+[33C
+[0K127.0.0.1:6379> DEL "added_todos"
+[33C
+(integer) 1
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> DEL "added_todos"[0;90;49m key [key ...][0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"[0;90;49m key[0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"
+[33C
+(nil)
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> GET "added_todos"[0;90;49m key[0m
+[33C
+[0K127.0.0.1:6379> GET "added_todos"
+[33C
+"1"
+127.0.0.1:6379> 
+[0K127.0.0.1:6379> e
+[17C
+[0K127.0.0.1:6379> ex
+[18C
+[0K127.0.0.1:6379> exi
+[19C
+[0K127.0.0.1:6379> exit
+[20C
+[0K127.0.0.1:6379> exit
+[20C
+[?2004hroot@d917141cca15:/data# exit
+[?2004l
+exit
+[1m[7m%[27m[1m[0m                                                                                                                                  
+ 
+
+[0m[27m[24m[Jrobinyo@Robinins-MacBook-Pro todo-backend % [K[?2004heexit[?2004l
+
+
+Script done on Tue Nov 18 14:08:44 2025

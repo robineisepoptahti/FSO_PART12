@@ -15,6 +15,6 @@ app.use(express.json());
 
 app.use("/", indexRouter);
 app.use("/todos", todosRouter);
-app.use("/todocount", todosCountRouter);
+app.use("/statistics", todosCountRouter);
 
 module.exports = app;
