@@ -1,9 +1,16 @@
 services:
   app: # The name of the service, can be anything
-    image: todo-backend # Declares which image to use
-    build: . # Declares where to build if image is not found
+    image: todo-backend-dev # Declares which image to use
+    build: # Declares where to build if image is not found
+      context: .
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./:/usr/src/app
     ports: # Declares the ports to publish
       - 3000:3000
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGO_URL=mongodb://mongo:27017/the_database
   mongo:
     image: mongo
     ports:
