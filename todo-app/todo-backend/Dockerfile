@@ -7,8 +7,6 @@ COPY --chown=node:node . .
 
 RUN npm ci
 
-ENV DEBUG=playground:*
-
 USER node
 
-CMD npm start
+CMD ["npm", "run", "start"]
