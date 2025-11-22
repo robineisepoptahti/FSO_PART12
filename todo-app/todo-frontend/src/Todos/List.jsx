@@ -1,12 +1,9 @@
-import React from "react";
 import Todo from "./Todo";
 
 const TodoList = ({ todos, deleteTodo, completeTodo }) => {
-  // Defensive: ensure todos is an array. If it's not, log it for debugging
   if (!Array.isArray(todos)) {
-    // eslint-disable-next-line no-console
-    console.warn("TodoList expected todos to be an array, got:", todos);
-    return null;
+    console.error('todos is not an array:', todos);
+    return <div>Loading todos...</div>;
   }
 
   return (
@@ -14,7 +11,7 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
       {todos
         .map((todo) => {
           return (
-            <div key={todo._id || todo.id || Math.random()}>
+            <div key={todo._id}>
               <Todo
                 todo={todo}
                 deleteTodo={deleteTodo}
@@ -23,7 +20,7 @@ const TodoList = ({ todos, deleteTodo, completeTodo }) => {
             </div>
           );
         })
-        .reduce((acc, cur) => [...acc, <hr key={Math.random()} />, cur], [])}
+        .reduce((acc, cur, idx) => [...acc, <hr key={`hr-${idx}`} />, cur], [])}
     </>
   );
 };
