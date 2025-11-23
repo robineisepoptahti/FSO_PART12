@@ -1,0 +1,39 @@
+services:
+  # BACKEND
+  backend: # The name of the service, can be anything
+    image: patientor-backend-dev # Declares which image to use
+    build: # Declares where to build if image is not found
+      context: ./patientor_back
+      dockerfile: dev.Dockerfile
+    volumes:
+      - ./patientor_back/:/usr/src/app
+      - /usr/src/app/node_modules # Preserve node_modules
+  mongo:
+    image: mongo
+    ports:
+      - 3456:27017
+    environment:
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./patientor_back/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./patientor_back/mongo_data:/data/db
+  #FRONTEND
+  app:
+    image: patientor-front-dev
+    build:
+      context: ./patientor_front
+      dockerfile: dev.Dockerfile # This will simply tell which dockerfile to read
+    volumes:
+      - ./patientor_front/:/usr/src/app # Bind mount source
+      - /usr/src/app/node_modules # Anonymous volume preserves node_modules
+    container_name: patientor-front-dev # This will name the container hello-front-dev
+  #REVERESE PROXY
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app # wait for the frontend container to be started
