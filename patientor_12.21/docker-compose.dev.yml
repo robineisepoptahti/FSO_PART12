@@ -8,15 +8,6 @@ services:
     volumes:
       - ./patientor_back/:/usr/src/app
       - /usr/src/app/node_modules # Preserve node_modules
-  mongo:
-    image: mongo
-    ports:
-      - 3456:27017
-    environment:
-      MONGO_INITDB_DATABASE: the_database
-    volumes:
-      - ./patientor_back/mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
-      - ./patientor_back/mongo_data:/data/db
   #FRONTEND
   app:
     image: patientor-front-dev

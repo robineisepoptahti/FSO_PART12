@@ -1,0 +1,24 @@
+services:
+  # BACKEND
+  backend: # The name of the service, can be anything
+    image: patientor-backend # Declares which image to use
+    build: # Declares where to build if image is not found
+      context: ./patientor_back
+      dockerfile: Dockerfile
+  #FRONTEND
+  app:
+    image: patientor-front
+    build:
+      context: ./patientor_front
+      dockerfile: Dockerfile # This will simply tell which dockerfile to read
+    container_name: patientor-front #
+  #REVERESE PROXY
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - app # wait for the frontend container to be started
